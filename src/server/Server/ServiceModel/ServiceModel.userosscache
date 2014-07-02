@@ -1,0 +1,11 @@
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\IMovieRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\MovieRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\ILocationRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\LocationRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\IMovieLocationRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\MovieLocationRepository.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\MovieLocation.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\MovieDataStore.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\IMovieDataStore.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\Configuration.cs
+ProjectItem:D:\Github\ilkera\moviex\src\server\Server\ServiceModel\MovieDBSchema.cs

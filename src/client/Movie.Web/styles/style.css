@@ -1,0 +1,80 @@
+.searchArea {
+	background-color: #4A4A4A;
+	padding-top:5px;
+	width:100%;
+	height:50px;
+}
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom:10px }
+
+#searchfield form {
+  display: inline-block;
+  width: 81%;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+#searchfield form .biginput {
+	background-color:white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:large;
+	height:30px;
+    width:95%;
+	padding-left:10px;
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    font-weight:normal;
+    font-size: 1.5em;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+#searchfield form .biginput:focus {
+  color: #858585;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+
+
+.cinerchApp{
+	width:800px;
+	height:800px;
+	padding-left:10px;
+}
+.cinerchApp-logo{
+    padding-top:5px;
+	float:left;
+	height:30px;
+	width:15%;
+}
+.movieInfo {
+	padding:10px;
+	padding-top:20px;
+}
+.movieInfo-title{
+	 font-size:x-large;
+	 font-weight:bold;
+}
+.movieInfo-release-year-company{
+	font-weight:bold;
+	font-size:small;
+	color:#F5A623;
+}
+.movieInfo-cast-label{
+	font-weight:bold;
+	font-size:small;
+}
+.movieInfo-cast-data-value{
+	font-weight:bold;
+	font-size:small;
+	color:#4A90E2;
+}
+
+#map_canvas {
+    height:500px;
+  	width: 100%;
+}

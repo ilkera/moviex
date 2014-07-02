@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <title>Cinerch Movie App</title>
+  <link rel="stylesheet" href="styles/style-min.css"/>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+</head>
+
+<body>
+    <div id="cinerch_app" class="cinerchApp">
+        <header>
+            <div id="searchBoxArea" class="searchArea"></div>
+        </header>
+
+        <section id="movie">
+            <div id="movie_info" class="movieInfo"></div>
+        </section>
+	    
+        <section id="movie_locations">
+            <div id="map_canvas"></div>
+        </section>
+    </div>
+
+    <div id="footer">
+      <!-- Social App logos, Copyright, App store logos-->
+   </div>
+
+<!-- Scripts--> 
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.autocomplete.min.js"></script>
+<script src="scripts/underscore-min.js"></script>
+<script src="scripts/backbone-min.js"></script>
+<script src="scripts/cinerch.config-min.js"></script>
+<script src="scripts/cinerch.model-min.js"></script>
+<script src="scripts/cinerch.view-min.js"></script>
+
+<!-- Templates -->
+
+<!--Movie Info -->
+<script type="text/template" id="movieInfo-tpl">
+
+    <% 
+        var stars = Actor1;
+    
+        if(Actor2){ 
+            stars += ', ' + Actor2;
+        }
+        
+        if(Actor3){
+            stars += ', ' + Actor3;
+        } 
+    %>
+
+    <label class="movieInfo-title"><%= Title %></label><br/>
+	<label class="movieInfo-release-year-company"><%= ReleaseYear %> | <%= ProductionCompany %></label><br/>
+	<label class="movieInfo-cast-label">Director: </label>
+	<label class="movieInfo-cast-data-value"><%= Director %></label><br/>
+	<label class="movieInfo-cast-label">Writer: </label>
+	<label class="movieInfo-cast-data-value"><%= Writer %></label><br/>
+	<label class="movieInfo-cast-label">Stars: </label>
+    <label class="movieInfo-cast-data-value"><%= stars %></label>
+</script>
+
+<!--Auto complete movie search box-->
+ <script type="text/template" id="movieSearchbox-tpl">
+     <div id="searchfield">
+		    <img src="images/cinerch_logo.png" alt="Cinerch App" class="cinerchApp-logo" />
+            <form>
+                <input type="text" name="movie" class="biginput" id="autocomplete">
+            </form>
+	  </div>
+</script>
+
+<script type="text/javascript">
+
+    // Initializers
+
+    var movieCollection = new CinerchApp.MovieCollection();
+
+    var mainAppView = new CinerchApp.MainAppView(
+        {
+            mapView: new CinerchApp.MapView({ el: document.getElementById('map_canvas'), collection: new CinerchApp.MovieLocationCollection(null, { id: 0 }) }),
+            movieInfoView: new CinerchApp.MovieInfoView({ model: new CinerchApp.Movie() }),
+            movieSearchView: new CinerchApp.MovieSearchView({ el: document.getElementById('searchBoxArea'), collection: new CinerchApp.MovieSuggestions([]) }),
+            collection: movieCollection
+        });
+
+</script>
+
+</body>
+</html>
