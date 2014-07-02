@@ -21,28 +21,17 @@ Web site and web service are hosted on Windows Azure. Here is the endpoints;
 
 ##### Things got done for v1:
 	• Functional web site that meets requirements.
-    
 	• User can search movie and filter it using the view. (Autocomplete)
-    
 	• User can see movie locations on map
-    
-	• Clicking on a marker on google map shows a fun fact about a location (if location has a fun fact)
-    
+    	• Clicking on a marker on google map shows a fun fact about a location (if location has a fun fact)
 	• Single web page (index.html) with MVC pattern applied
-    
-	• Used underscore templates in index.html to dynamically generate content based on model
-    
+    	• Used underscore templates in index.html to dynamically generate content based on model
 	• API Documentation
-    
 	• Javascript/CSS minified (Production)
-    
 	• Static files (JS, CSS, Images) are compressed and cached
-    
-	• LatLng batching - used [this site](   http://www.findlatitudeandlongitude.com/batch-geocode/) geocode all the locations listed in https://data.sfgov.org/Arts-Culture-and-Recreation-/Film-Locations-in-San-Francisco/yitu-d5am
-	
-    • Database scripts (create database, table schema generation, and data insertion scripts)
-	
-    • Testing for XSS
+	• LatLng batching - used [this site](http://www.findlatitudeandlongitude.com/batch-geocode/) geocode all the locations listed in [SF Data](https://data.sfgov.org/Arts-Culture-and-Recreation-/Film-Locations-in-San-Francisco/yitu-d5am)
+	• Database scripts (create database, table schema generation, and data insertion scripts)
+  	• Testing for XSS
 
 ##### Things left for v2 (Missing):
 	•  Movie Details and Images (using rottentomatoes/imdb API) : Nice to see movie pictures and other details such as Actor information or photos from location/or get directions.
