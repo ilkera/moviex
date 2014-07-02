@@ -23,9 +23,9 @@ Web site and web service are hosted on Windows Azure. Here is the endpoints;
 	• Functional web site that meets requirements.
 	• User can search movie and filter it using the view. (Autocomplete)
 	• User can see movie locations on map
-    	• Clicking on a marker on google map shows a fun fact about a location (if location has a fun fact)
+	• Clicking on a marker on google map shows a fun fact about a location (if location has a fun fact)
 	• Single web page (index.html) with MVC pattern applied
-    	• Used underscore templates in index.html to dynamically generate content based on model
+	• Used underscore templates in index.html to dynamically generate content based on model
 	• API Documentation
 	• Javascript/CSS minified (Production)
 	• Static files (JS, CSS, Images) are compressed and cached
@@ -34,21 +34,30 @@ Web site and web service are hosted on Windows Azure. Here is the endpoints;
   	• Testing for XSS
 
 ##### Things left for v2 (Missing):
-	•  Movie Details and Images (using rottentomatoes/imdb API) : Nice to see movie pictures and other details such as Actor information or photos from location/or get directions.
+	• Movie Details and Images (using rottentomatoes/imdb API) :
+	Nice to see movie pictures and other details such as Actor information or photos from location/or get directions.
 
-	•  Unit and functional test automation: Unit testing and functional testing left for v2 as needed to ramp up on JS unit testing frameworks such as Qunit or Selenium (functional)
+	• Unit and functional test automation
+	Unit testing and functional testing left for v2 as needed to ramp up on JS unit testing frameworks such as Qunit or Selenium (functional)
 
-	•  Logging: Used console.log aggressively while testing. Need to implement a global logger on the client side.
+	• Logging
+	Used console.log aggressively while testing. Need to implement a global logger on the client side.
 
-	•  Geocoding (Currently map shows San Francisco by default on startup) Considered using geocoding to find out user location and set maps location based on user location. 
+	• Geocoding 
+	(Currently map shows San Francisco by default on startup) Considered using geocoding to find out user location and set maps location based on user location. 
    
-	• Considered using [Haversine Algorithm](http://en.wikipedia.org/wiki/Haversine_formula) to find out the closest movie locations to the user based on user's current location
+	• Haversine Algorithm
+	Considered using [Haversine Algorithm](http://en.wikipedia.org/wiki/Haversine_formula) to find out the closest movie locations to the user based on user's current location
 
-	• Loading underscore templates from external html files and enable caching for them
+	• Templates
+	Loading underscore templates from external html files and enable caching for them
 
-	•  Memcache: Each request to server goes to database whenever client requests data from server (movie info, movie locations). Memcache is required to avoid these costly calls.
+	• Memcache
+	Each request to server goes to database whenever client requests data from server (movie info, movie locations). 	Memcache is required to avoid these costly calls.
 
-	•  Autocomplete currently fetches all movies (first request) from web service and caches it in the client. Move this logic to server with paginated data when # of movie increases
+	• Autocomplete
+	Autocomplete currently fetches all movies (first request) from web service and caches it in the client. 
+	Move this logic to server with paginated data when # of movie increases
     
 		• Mobile web site (CSS resize)
 		• Web API Key and versioning 
@@ -56,14 +65,20 @@ Web site and web service are hosted on Windows Azure. Here is the endpoints;
 		• Globalization/Localization 
 
 ##### Technical Choices
-	• For front-end, Backbone.js is chosen as it's a very lightweight JS MVC framework and also recommended by challenge.
+	• For front-end
+	Backbone.js is chosen as it's a very lightweight JS MVC framework and also recommended by challenge.
 
-	•  For web API, ASP.NET Web API is chosen as I have the familiarity with C# and ASP.NET. 
+	• For web API
+	ASP.NET Web API is chosen as I have the familiarity with C# and ASP.NET. 
 
-	•  For back-end, relational database (SQL) is chosen as we need a transactional data and querying by index. (movieId).
+	• For back-end
+	relational database (SQL) is chosen as we need a transactional data and querying by index. (movieId).
 
-	•  Used an external Jquery autocomplete library since I didn't have experience too much with JQuery. (Source:[JQuery AutoComplete]( http://www.devbridge.com/projects/autocomplete/jquery/)
-
+	• External Jquery autocomplete library
+	Since I didn't have experience too much with JQuery.
+	(Source:[JQuery AutoComplete](http://www.devbridge.com/projects/autocomplete/jquery/)
+	
+	• Movie Data
 	•  I parsed the movie data and did a batch geocode on all locations. The other option would be on querying geocoding service on-demand which is an extra call to an external API. Also, a cache is required on server to serve the longitude and latitude if available upon request. Therefore, server doesn't hit the external service all the time. However, pre-batched latitude and longitude was a better decision to avoid extra calls and caching setup/testing cost. 
 
 
